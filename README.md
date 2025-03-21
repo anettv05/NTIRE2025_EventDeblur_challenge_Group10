@@ -20,7 +20,9 @@ Multi-GPU training:
 python -m torch.distributed.launch --nproc_per_node=4 --master_port=4321 basicsr/train.py -opt options/train/HighREV/EFNet_HighREV_Deblur.yml --launcher pytorch
 ```
 
-
+''' 
+I have actually run the code in kaggle so i will be giving the link of the kaggle for reference.
+'''
 ## How to start testing?
 Example:
 ```
