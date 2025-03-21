@@ -1,64 +1,3 @@
-# [NTIRE 2025 the First Challenge on Event-Based Deblurring](https://codalab.lisn.upsaclay.fr/competitions/21498) @ [CVPR 2025](https://cvlai.net/ntire/2025/)
-
-<p align="center">
-  <img src="./figs/logo.jpg" alt="Logo" width="600">
-</p>
-
-
-This is a simple introduction to the dataset and basic codes.
-
-## Downloading Testset
-### Blurry images and Raw events
-Testset input: 
-
-[CodaLab_downloading_link](https://codalab.lisn.upsaclay.fr/my/datasets/download/3ed362b8-9084-414d-a5f3-d906708773cf); [Kaggle_downloading_link](https://www.kaggle.com/datasets/lei0331/highrev-testset)
-
-(Optional) Voxel input for testset:
-[CodaLab_downloading_link](https://codalab.lisn.upsaclay.fr/my/datasets/download/bf89f778-353a-4a51-9dba-69894de81db0); [Kaggle_downloading_link](https://www.kaggle.com/datasets/lei0331/highrev-testset)
-
-## Downloading Trainset and Valset
-
-### Raw events
-The [HighREV dataset with raw events](https://codalab.lisn.upsaclay.fr/my/datasets/download/9f275580-9b38-4984-b995-1e59e96b6111)
-
-
-### Voxel grids
-***If you find the data loading too slow***, we also provide processed voxel grid (bin=6) for convenience, which is optional.
-
-[Processed voxel grid of events](https://codalab.lisn.upsaclay.fr/my/datasets/download/c83e95ab-d4e6-4b9f-b7de-e3d3b45356e3)
-
-
-
-
-The structure of the HighREV dataset with raw events is as following:
-
-```
-    --HighREV
-    |----train
-    |    |----blur
-    |    |    |----SEQNAME_%5d.png
-    |    |    |----...
-    |    |----event
-    |    |    |----SEQNAME_%5d_%2d.npz
-    |    |    |----...
-    |    |----sharp
-    |    |    |----SEQNAME_%5d.png
-    |    |    |----...
-    |----val
-    ...
-
-```
-For each blurry image, there are several NPZ files containing events. By concatenating them, the events for the entire exposure time can be obtained. More details please refer to `./basicsr/data/npz_image_dataset.py`
-
-
-### Converting events to voxel
-By using `./basicsr/utils/npz2voxel.py` you can convert raw events to voxel grids by you own offline.
-
-#### Dataset codes:
-`./basicsr/data/npz_image_dataset.py` for processing raw events.
-`./basicsr/data/voxelnpz_image_dataset.py` for processing voxel grids.
-
-
 
 
 ## How to start training?
@@ -67,7 +6,7 @@ We provide a simple codebase here:
 
 
 ```
-git clone https://github.com/AHupuJR/NTIRE2025_EventDeblur_challenge
+git clone https://github.com/anettv05/NTIRE2025_EventDeblur_challenge_Group10
 cd NTIRE2025_EventDeblur_challenge
 pip install -r requirements.txt
 python setup.py develop --no_cuda_ext

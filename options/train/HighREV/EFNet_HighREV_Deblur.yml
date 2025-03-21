@@ -2,7 +2,7 @@
 name: EFNet_highrev_single_deblur_debug  # add debug for quick debug
 model_type: ImageEventRestorationModel
 scale: 1
-num_gpu:  1 #4
+num_gpu:  0 #4
 manual_seed: 10
 
 datasets:
@@ -10,7 +10,7 @@ datasets:
     name: highrev-train
     type: NpzPngSingleDeblurDataset
 
-    dataroot: /work/lei_sun/HighREV/train
+    dataroot: /Users/anettvarghese/Desktop/HighREV/train
     # dataroot: /PATH/TO/DATASET/HighREV/train
 
     voxel_bins: 6
@@ -36,7 +36,7 @@ datasets:
     name: highrev-val
     type: NpzPngSingleDeblurDataset
     voxel_bins: 6
-    dataroot: /work/lei_sun/HighREV/val
+    dataroot: /Users/anettvarghese/Desktop/HighREV/val
     # dataroot: /PATH/TO/DATASET/HighREV/val
     gt_size: ~
     norm_voxel: true  
