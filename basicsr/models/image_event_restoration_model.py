@@ -5,18 +5,8 @@ from copy import deepcopy
 from os import path as osp
 from tqdm import tqdm
 import logging
-import importlib.util
 
-module_name = "03_EnhancedEFNet"
-module_path = "basicsr/models/archs/03_EnhancedEFNet.py"
-
-spec = importlib.util.spec_from_file_location(module_name, module_path)
-enhanced_efnet_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(enhanced_efnet_module)
-
-EnhancedEFNet = enhanced_efnet_module.EnhancedEFNet  # Access the class
-
-from basicsr.models.archs.03_EnhancedEFNet import define_network
+from basicsr.models.archs import define_network
 from basicsr.models.base_model import BaseModel
 from basicsr.utils import get_root_logger, imwrite, tensor2img, get_model_flops
 
