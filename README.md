@@ -1,17 +1,16 @@
 
 
-## How to start training?
+## Code Details
 
-We provide a simple codebase here:
-
-
+The code was trained in kaggle for 5 epoches using 2 GPUs.
 
 I have actually run the code in kaggle so i will be giving the link of the kaggle for reference.
 ```
 https://www.kaggle.com/code/anettvarghese/event-deblurring/edit
 ```
+The code is saved in the eventdeblurring_code.ipynb file.
 
-
+The model is also saved as .pth file
 
 ## Citations
 
